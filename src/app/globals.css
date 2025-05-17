@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  overflow-x: hidden;
+}
+
+/* Improved typography */
+h1, h2, h3, h4, h5, h6 {
+  @apply tracking-tight;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Custom styles for product cards */
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Custom hover effects */
+.hover-scale {
+  transition: transform 0.5s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Custom button styles */
+.btn-primary {
+  @apply bg-black text-white px-6 py-3 rounded-md font-medium hover:bg-gray-800 transition-colors;
+}
+
+.btn-outline {
+  @apply border border-black px-6 py-3 rounded-md hover:bg-black hover:text-white transition-colors;
+}
+
+/* Custom section spacing */
+.section-spacing {
+  @apply py-16 px-4 sm:py-20 sm:px-6 lg:px-8;
+}
+
+/* Custom heading styles */
+.heading-xl {
+  @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight;
+}
+
+.heading-lg {
+  @apply text-3xl md:text-4xl font-bold;
+}
+
+.heading-md {
+  @apply text-2xl font-bold;
+}
+
+/* Custom container */
+.container-custom {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .container-custom {
+    @apply px-5;
+  }
+  
+  .section-spacing {
+    @apply py-12 px-5;
+  }
+}
+
+/* Improved card styles */
+.card {
+  @apply bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100;
+}
+
+/* Gradient text */
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600;
+}
